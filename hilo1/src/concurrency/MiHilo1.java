@@ -23,24 +23,24 @@ public class MiHilo1 extends Thread {
         this.ini = ini;
     }
 
-//    Random rn = new Random();
+    Random rn = new Random();
 
     public void run() {
         while (true) {
-//            synchronized (getClass()) {
-//                try {
+            synchronized (getClass()) {
+                try {
 
-//                    getClass().notifyAll();
-//                    Thread.sleep(rn.nextInt(1000));
-//                    getClass().wait();
+                    getClass().notifyAll();
+                    Thread.sleep(rn.nextInt(1000));
+                    getClass().wait();
 
 //                Thread.sleep(1000);
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(MiHilo1.class.getName()).log(Level.SEVERE, null, ex);
-//                }
+                } catch (InterruptedException ex) {
+                    Logger.getLogger(MiHilo1.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 System.out.println(nombre + (ini++));
             }
-//        }
+        }
     }
 
     /**
